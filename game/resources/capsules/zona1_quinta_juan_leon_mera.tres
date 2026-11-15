@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HistoricCapsule" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/historic_capsule.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/placeholder/capsula_zona1.png" id="2_illustration"]
+
+[resource]
+script = ExtResource("1_script")
+id = "zona1_quinta_juan_leon_mera"
+zone_id = 1
+title = "Quinta de Juan León Mera"
+illustration = ExtResource("2_illustration")
+pages = Array[String](["[TODO: verificar] ¿Sabías que esta quinta, en Atocha, perteneció al escritor ambateño Juan León Mera?", "[TODO: verificar año y fuente] Juan León Mera escribió la letra del Himno Nacional del Ecuador en 1865.", "[TODO: verificar] También escribió «Cumandá», una de las novelas más conocidas del país.", "[TODO: verificar especies con el Jardín Botánico] Sus jardines guardan plantas nativas y árboles muy antiguos.", "¡Cuida este lugar! Lleva tu basura contigo y respeta las plantas. Un Ambato limpiecito empieza por ti."])
