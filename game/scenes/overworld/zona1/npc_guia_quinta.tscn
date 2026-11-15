@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/overworld/npc.tscn" id="1_npc"]
+[ext_resource type="Resource" path="res://resources/missions/zona1_limpieza_quinta.tres" id="2_mission"]
+
+[node name="GuiaQuinta" instance=ExtResource("1_npc")]
+npc_id = "guia_quinta"
+display_name = "Guía de la Quinta"
+mission = ExtResource("2_mission")
+lines_pending = Array[String](["¡Hola! Bienvenido a la Quinta de Juan León Mera.", "Unas criaturas de basura mutada aparecieron en los jardines y todo perdió su color.", "La más grande, el Plasti-Gólem, está al este, junto al agua. ¿Me ayudas a purificarla?", "Acércate y pulsa E para enfrentarla. ¡Usa tus ataques ecológicos!"])
+lines_in_progress = Array[String](["El Plasti-Gólem sigue al este, junto al agua. ¡Tú puedes!", "Si quieres practicar, la Maleza Tóxica del jardín oeste es más débil."])
+lines_completed = Array[String](["¡Lo lograste! La quinta recuperó sus colores.", "Recuerda: separar la basura y reciclar mantiene limpia a Ambato."])
