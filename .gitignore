@@ -1,0 +1,21 @@
+# Godot 4
+.godot/
+*.translation
+export_presets.cfg
+/builds/
+/export/
+*.tmp
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+tools/osm_pipeline/output/*
+!tools/osm_pipeline/output/.gitkeep
+# SO / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Archivos fuente pesados de arte (subir solo el PNG exportado)
+*.kra~
