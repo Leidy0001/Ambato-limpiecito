@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/attack_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "cortafuegos"
+display_name = "Cortafuegos"
+description = "Una barrera que detiene el humo... ¡y también a los virus informáticos!"
+eco_type = 2
+power = 26
+accuracy = 0.75
