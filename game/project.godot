@@ -5,7 +5,7 @@ config_version=5
 config/name="Ambato Limpiecito"
 config/description="RPG 2D para promocionar Ingeniería de Software (FISEI-UTA) y el cuidado de Ambato."
 run/main_scene="res://scenes/main/main.tscn"
-config/features=PackedStringArray("4.3")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 GameState="*res://scripts/autoload/game_state.gd"
@@ -46,6 +46,9 @@ interact={
 }
 
 [rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/canvas_textures/default_texture_filter=0
 
 [layer_names]
