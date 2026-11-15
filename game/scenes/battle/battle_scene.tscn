@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/battle/battle_scene.gd" id="1_scene"]
+[ext_resource type="Script" path="res://scripts/resources/attack_data.gd" id="2_attack_script"]
+[ext_resource type="Resource" path="res://resources/attacks/reciclar.tres" id="3_reciclar"]
+[ext_resource type="Resource" path="res://resources/attacks/filtro_uv.tres" id="4_filtro_uv"]
+[ext_resource type="Resource" path="res://resources/attacks/cortafuegos.tres" id="5_cortafuegos"]
+[ext_resource type="Resource" path="res://resources/attacks/compostaje.tres" id="6_compostaje"]
+[ext_resource type="Texture2D" path="res://assets/sprites/placeholder/player_back.png" id="7_player_back"]
+[ext_resource type="PackedScene" path="res://scenes/battle/creature_hud.tscn" id="8_hud"]
+[ext_resource type="Script" path="res://scripts/ui/typewriter_label.gd" id="9_typewriter"]
+[ext_resource type="Script" path="res://scripts/battle/battle_manager.gd" id="10_manager"]
+
+[node name="BattleScene" type="CanvasLayer"]
+script = ExtResource("1_scene")
+player_attacks = Array[ExtResource("2_attack_script")]([ExtResource("3_reciclar"), ExtResource("4_filtro_uv"), ExtResource("5_cortafuegos"), ExtResource("6_compostaje")])
+
+[node name="Sky" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.72, 0.87, 0.9, 1)
+
+[node name="Field" type="ColorRect" parent="."]
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+color = Color(0.56, 0.78, 0.47, 1)
+
+[node name="EnemyPlatform" type="ColorRect" parent="."]
+offset_left = 204.0
+offset_top = 70.0
+offset_right = 284.0
+offset_bottom = 80.0
+color = Color(0.42, 0.62, 0.36, 1)
+
+[node name="PlayerPlatform" type="ColorRect" parent="."]
+offset_left = 28.0
+offset_top = 118.0
+offset_right = 116.0
+offset_bottom = 128.0
+color = Color(0.42, 0.62, 0.36, 1)
+
+[node name="EnemySprite" type="TextureRect" parent="."]
+offset_left = 212.0
+offset_top = 12.0
+offset_right = 276.0
+offset_bottom = 76.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerSprite" type="TextureRect" parent="."]
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 104.0
+offset_bottom = 128.0
+texture = ExtResource("7_player_back")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnemyHud" parent="." instance=ExtResource("8_hud")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 32.0
+
+[node name="PlayerHud" parent="." instance=ExtResource("8_hud")]
+offset_left = 192.0
+offset_top = 96.0
+offset_right = 312.0
+offset_bottom = 120.0
+
+[node name="BottomPanel" type="PanelContainer" parent="."]
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Margin" type="MarginContainer" parent="BottomPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="BottomPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Message" type="Label" parent="BottomPanel/Margin/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Mensaje de combate"
+autowrap_mode = 3
+max_lines_visible = 4
+script = ExtResource("9_typewriter")
+
+[node name="AttackMenu" type="GridContainer" parent="BottomPanel/Margin/HBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+columns = 2
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource("10_manager")

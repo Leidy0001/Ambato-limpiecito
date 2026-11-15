@@ -25,9 +25,10 @@ game/                 Proyecto Godot (abrir game/project.godot)
   scripts/autoload/   GameState, MissionManager (singletons globales)
   scripts/battle/     Máquina de estados del combate
   resources/          Custom Resources: criaturas, ataques, cápsulas, misiones
-  assets/             Sprites, tilesets, audio, fuentes (ver CREDITS.md)
+  assets/             Sprites, tilesets, shaders, tema de UI, audio, fuentes (ver CREDITS.md)
   maps/               Mapas .tmx importados desde Tiled
 tools/osm_pipeline/   Scripts Python para convertir OSM → Tiled
+tools/placeholders/   Generador del arte provisional (Godot headless)
 docs/                 Requisitos, decisiones pendientes, arquitectura
 ```
 
@@ -35,6 +36,7 @@ docs/                 Requisitos, decisiones pendientes, arquitectura
 1. Instalar [Godot 4.x](https://godotengine.org/download) (versión estándar, no .NET).
 2. Clonar el repo y abrir `game/project.godot` desde Godot.
 3. Leer [CONTRIBUTING.md](CONTRIBUTING.md) antes de tu primer commit.
+4. Ejecutar con F5. Controles: WASD o flechas para moverse, E o Enter para interactuar.
 
 ## Licencia
 Código bajo licencia MIT. Los assets de terceros conservan su propia licencia (ver `CREDITS.md`).

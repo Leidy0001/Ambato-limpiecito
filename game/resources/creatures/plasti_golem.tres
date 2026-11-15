@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CreatureData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/creature_data.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/resources/attack_data.gd" id="2_attack_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/placeholder/plasti_golem.png" id="3_sprite"]
+[ext_resource type="Resource" path="res://resources/attacks/enemigos/lluvia_microplasticos.tres" id="4_atk"]
+[ext_resource type="Resource" path="res://resources/attacks/enemigos/golpe_de_botella.tres" id="5_atk"]
+
+[resource]
+script = ExtResource("1_script")
+id = "plasti_golem"
+display_name = "Plasti-Gólem"
+description = "Un gigante hecho de botellas y fundas plásticas que nadie recicló."
+zone_id = 1
+is_boss = true
+max_hp = 60
+front_sprite = ExtResource("3_sprite")
+attacks = Array[ExtResource("2_attack_script")]([ExtResource("4_atk"), ExtResource("5_atk")])

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/overworld/trash.gd" id="1_trash"]
+[ext_resource type="Texture2D" path="res://assets/sprites/placeholder/trash.png" id="2_sprite"]
+
+[node name="Trash" type="Sprite2D"]
+texture = ExtResource("2_sprite")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("1_trash")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MissionData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/mission_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "zona1_limpieza_quinta"
+zone_id = 1
+title = "Limpieza de la Quinta"
+description = "Purifica al Plasti-Gólem para devolverle el color a la Quinta de Juan León Mera."
+giver_npc = "guia_quinta"
+is_main_mission = true
+target_creature_id = "plasti_golem"

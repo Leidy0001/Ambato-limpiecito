@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scripts/overworld/zone.gd" id="1_zone"]
+[ext_resource type="TileSet" path="res://assets/tilesets/placeholder_zona1_tileset.tres" id="2_tileset"]
+[ext_resource type="Script" path="res://scripts/overworld/placeholder_map.gd" id="3_map"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/trash.tscn" id="4_trash"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/player.tscn" id="5_player"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/zona1/npc_guia_quinta.tscn" id="6_guia"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/encounter.tscn" id="7_encounter"]
+[ext_resource type="Resource" path="res://resources/creatures/plasti_golem.tres" id="8_golem"]
+[ext_resource type="Resource" path="res://resources/creatures/maleza_toxica.tres" id="9_maleza"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/purification_filter.tscn" id="10_filter"]
+[ext_resource type="PackedScene" path="res://scenes/ui/mission_hud.tscn" id="11_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialog_box.tscn" id="12_dialog"]
+[ext_resource type="PackedScene" path="res://scenes/ui/capsule_modal.tscn" id="13_capsule_modal"]
+[ext_resource type="Resource" path="res://resources/missions/zona1_limpieza_quinta.tres" id="14_mission"]
+[ext_resource type="Resource" path="res://resources/capsules/zona1_quinta_juan_leon_mera.tres" id="15_capsule"]
+
+[node name="Zona1QuintaJuanLeonMera" type="Node2D"]
+script = ExtResource("1_zone")
+zone_id = 1
+zone_name = "Quinta de Juan León Mera"
+main_mission = ExtResource("14_mission")
+capsule = ExtResource("15_capsule")
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tileset")
+script = ExtResource("3_map")
+layout = "########################################
+#**...................................~#
+#*.........HHHHHHHHHHHH..............~~#
+#..........HHHHHHHHHHHH.............~~~#
+#..........HHHHHHHHHHHH............~~~~#
+#..........HHHHHHHHHHHH...........~~~~~#
+#................==...............~~~~~#
+#..**............==..............~~~~~~#
+#..**............==..............~~~~~~#
+#................==...............~~~~~#
+#....######......==......######...~~~~~#
+#................==................~~~~#
+#==================================..~~#
+#................==...................~#
+#..*.*.*.........==...........*.*.....~#
+#................==....................#
+#....######......==......######........#
+#................==....................#
+#..**............==............**......#
+#..**............==............**......#
+#................==....................#
+#................==....................#
+#................==....................#
+########################################
+"
+
+[node name="Trash" type="Node2D" parent="."]
+
+[node name="Botella1" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(60, 40)
+kind = 0
+
+[node name="Funda1" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(200, 120)
+kind = 1
+
+[node name="Lata1" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(250, 200)
+kind = 2
+
+[node name="Botella2" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(400, 130)
+kind = 0
+
+[node name="Funda2" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(330, 250)
+kind = 1
+
+[node name="Lata2" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(450, 300)
+kind = 2
+
+[node name="Botella3" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(100, 330)
+kind = 0
+
+[node name="Funda3" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(560, 260)
+kind = 1
+
+[node name="Lata3" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(480, 60)
+kind = 2
+
+[node name="Botella4" parent="Trash" instance=ExtResource("4_trash")]
+position = Vector2(150, 190)
+kind = 0
+
+[node name="Entities" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Entities" instance=ExtResource("5_player")]
+position = Vector2(288, 344)
+
+[node name="GuiaQuinta" parent="Entities" instance=ExtResource("6_guia")]
+position = Vector2(328, 300)
+
+[node name="PlastiGolem" parent="Entities" instance=ExtResource("7_encounter")]
+position = Vector2(520, 156)
+creature = ExtResource("8_golem")
+
+[node name="MalezaToxica" parent="Entities" instance=ExtResource("7_encounter")]
+position = Vector2(152, 296)
+creature = ExtResource("9_maleza")
+
+[node name="PurificationFilter" parent="." instance=ExtResource("10_filter")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="MissionHud" parent="UI" instance=ExtResource("11_hud")]
+
+[node name="DialogBox" parent="UI" instance=ExtResource("12_dialog")]
+
+[node name="CapsuleModal" parent="UI" instance=ExtResource("13_capsule_modal")]
