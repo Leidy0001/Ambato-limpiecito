@@ -53,3 +53,7 @@ textures/canvas_textures/default_texture_filter=0
 2d_physics/layer_1="mundo"
 2d_physics/layer_2="jugador"
 2d_physics/layer_3="interactuables"
+
+[gui]
+
+theme/custom="res://assets/ui/tema_base.tres"
